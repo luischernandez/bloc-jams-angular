@@ -1,12 +1,12 @@
 (function() {
-    function AlbumCtrl() {
+    function AlbumCtrl(Fixtures) {
         this.heroTitle = "Turn the music up!";
-        this.albumData = albumPicasso;
+        this.albumData = Fixtures.getAlbum();
         //add albumData property that holds copy of albumPicasso
         //use ng-repeat
     }
 
     angular
         .module('blocJams')
-        .controller('AlbumCtrl', AlbumCtrl);
+        .controller('AlbumCtrl', ['Fixtures', AlbumCtrl]);
 })();
