@@ -170,6 +170,22 @@
             }
         };
 
+        /*
+        * @function
+        * @desc: mutes song
+        */
+        SongPlayer.muteSong = function(){
+            if(currentBuzzObject.isMuted() === false) {
+                currentBuzzObject.mute();
+                SongPlayer.mute = true; //this will allow the view to show mute icon
+            } else {
+                currentBuzzObject.unmute();
+                SongPlayer.mute = false;
+            }
+        }
+
+
+
         return SongPlayer;
     }
 
