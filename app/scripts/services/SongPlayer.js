@@ -91,6 +91,23 @@
         };
 
         /*
+        * @desc: current volume
+        * @type: {number}
+        */
+        SongPlayer.volume = 80;
+
+        /*
+        * @function: setVolume
+        * @desc: set volume from 0-100
+        * @type: {number}
+        */
+        SongPlayer.setVolume = function(volume){
+            if(currentBuzzObject){
+                currentBuzzObject.setVolume(volume);
+            }
+        };
+
+        /*
         * @desc: sets current song and plays song. calls playSong function
         */
         SongPlayer.play = function(song){
